@@ -1,0 +1,54 @@
+$primary-color: #3f51b5;
+$primary-dark: #303f9f;
+$primary-light: #c5cae9;
+$primary-text: #212121;
+$secondary-color: #607d8b;
+$secondary-text: #757575;
+$text-color: #ffffff;
+
+.container {
+  @media (min-width: 1200px) {
+    max-width: 90%;
+  }
+}
+
+.main {
+  padding: 20px 0;
+  li {
+    margin-bottom: 15px;
+  }
+}
+.user-login {
+  background: $primary-light;
+  color: $primary-text;
+  position: relative;
+  min-height: 100vh;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  canvas {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  input {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    background: rgba(255, 255, 255, 0.5);
+    transition: all 400ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    &:focus {
+      background: rgba(255, 255, 255, 0.6);
+      border-color: transparent;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+  }
+  .btn-primary {
+    background: $primary-color;
+    border-color: $primary-color;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+}
