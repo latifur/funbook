@@ -228,5 +228,12 @@ export const UserInfo = [
       catchPhrase: "Centralized empowering task-force",
       bs: "target end-to-end models"
     }
+  },
+  {
+    id: 11,
+    name: "Rajibur Rahman",
+    username: "Rajibur",
+    email: "rajibur@bs-23.com",
+    phone: "01454845"
   }
 ];

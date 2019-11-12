@@ -7,6 +7,7 @@ const Comment = props => {
   const [CommentText, SetComment] = useState({ commentTempText: "" });
 
   const AllData = useSelector(state => state.post);
+  const UserInfo = useSelector(state => state.user);
   const dispatch = useDispatch();
 
   const findPost = AllData.Posts.find(res => res.id == props.id);
@@ -26,7 +27,7 @@ const Comment = props => {
         return (
           <div key={index} className="p-3">
             <hr />
-            <h4>User Name</h4>
+            <h5>{UserInfo.CurrentUserName}</h5>
             <p>{item}</p>
             <hr />
           </div>

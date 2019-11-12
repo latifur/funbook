@@ -1,15 +1,16 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { TRY_LOGIN } from "../../redux/actions/userAction";
+import { Redirect, useHistory, Link } from "react-router-dom";
 
 function LoginForm() {
   const [userState, setuserState] = useState({
     userName: "",
     userPassword: ""
   });
-
+  const UserInfo = useSelector(state => state.user);
   const dispatch = useDispatch();
 
   function infoSubmit(e) {
@@ -22,6 +23,10 @@ function LoginForm() {
       alert("please input valid information");
     } else {
       dispatch(TRY_LOGIN(userName, userPassword));
+    }
+    if (UserInfo.loginStatus) {
+      console.log("success");
+      return <Redirect to="/success" />;
     }
   }
 
