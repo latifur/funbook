@@ -17,7 +17,12 @@ function LoginForm() {
     const userName = userState.userName;
     const userPassword = userState.userPassword;
     console.log(userName, userPassword);
-    dispatch(TRY_LOGIN(userName, userPassword));
+
+    if (userName == "" || userPassword == "") {
+      alert("please input valid information");
+    } else {
+      dispatch(TRY_LOGIN(userName, userPassword));
+    }
   }
 
   return (

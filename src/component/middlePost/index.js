@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { LOAD_MORE, LIKE } from "../../redux/actions/postAction";
 import Picture from "../postComponent/picture";
 import Comment from "../postComponent/comment";
+import ShareThis from "../postComponent/shareThis";
 
 function MiddlePost() {
   const AllData = useSelector(state => state.post);
@@ -35,14 +36,11 @@ function MiddlePost() {
   const allPost = AllData.Posts.map((item, index) => {
     return (
       <Card key={index} className="mb-4">
-        <Picture ImgUrl={item.url} />
+        <Picture ImgUrl={item.url} alt="picture" key={index} />
         {/* <GalleryI photos={photos} direction={"column"} /> */}
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
+          <Card.Title>{item.title}</Card.Title>
+          <Card.Text>{item.text}</Card.Text>
         </Card.Body>
         <Card.Footer className="text-right">
           <Button
@@ -61,9 +59,12 @@ function MiddlePost() {
           >
             <IoMdThumbsUp /> <Badge variant="light">{item.like}</Badge>
           </Button>
-          <Button className="btn btn-link" variant="link">
-            <IoMdShareAlt />
-          </Button>
+          <ShareThis
+            key={index}
+            ImgUrl={item.url}
+            title={item.title}
+            text={item.text}
+          />
         </Card.Footer>
         <Comment id={item.id} />
       </Card>

@@ -3,7 +3,8 @@ import { UserInfo } from "../data/users";
 const initialState = {
   user: UserInfo,
   loginStatus: false,
-  CurrentUserEmail: ""
+  CurrentUserEmail: "",
+  CurrentUserName: ""
 };
 
 export const userReducer = (state = initialState, action) => {
@@ -12,7 +13,21 @@ export const userReducer = (state = initialState, action) => {
       const findUser = state.user.find(
         res => res.email == action.payload.userEmail
       );
-      if (findUser.phone == action.payload.userPassword) console.log(findUser);
+      if (!findUser) {
+        alert("Email Doesnot match to any Account");
+      } else {
+        if (findUser.phone == action.payload.userPassword) {
+          state = {
+            user: state.UserInfo,
+            loginStatus: true,
+            CurrentUserEmail: findUser.email,
+            CurrentUserName: findUser.username
+          };
+        } else {
+          alert("Password Does not match");
+        }
+      }
+
       return state;
     }
     default: {

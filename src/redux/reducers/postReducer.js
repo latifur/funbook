@@ -46,7 +46,7 @@ export const PostReducer = (state = initialState, action) => {
       return state;
     }
     default: {
-      const showingPost = Data.slice(state.lastLoadedPostNumber, 5);
+      const showingPost = Data.slice(0, 5);
 
       const newState = {
         Posts: showingPost,
