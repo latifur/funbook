@@ -242,5 +242,12 @@ export const UserInfo = [
     username: "Latifur",
     email: "latifursizar@gmail.com",
     phone: "123123"
+  },
+  {
+    id: 13,
+    name: "Abu Sayed",
+    username: "Sayed",
+    email: "sayed@gmail.com",
+    phone: "111222"
   }
 ];

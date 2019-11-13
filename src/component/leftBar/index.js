@@ -1,15 +1,28 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function LeftBar() {
   return (
     <>
-      <ul className="list-unstyled">
-        <li>Left Bar Item</li>
-        <li>Left Bar Item</li>
-        <li>Left Bar Item</li>
-        <li>Left Bar Item</li>
-        <li>Left Bar Item</li>
-        <li>Left Bar Item</li>
+      <ul className="list-unstyled d-none d-md-block">
+        <li>
+          <Link to="/">Left bar item</Link>
+        </li>
+        <li>
+          <Link to="/">Left bar item</Link>
+        </li>
+        <li>
+          <Link to="/">Left bar item</Link>
+        </li>
+        <li>
+          <Link to="/">Left bar item</Link>
+        </li>
+        <li>
+          <Link to="/">Left bar item</Link>
+        </li>
+        <li>
+          <Link to="/">Left bar item</Link>
+        </li>
       </ul>
     </>
   );

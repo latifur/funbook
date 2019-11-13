@@ -7,3 +7,9 @@ export const TRY_LOGIN = (userEmail, userPassword) => {
     }
   };
 };
+
+export const LOG_OUT = () => {
+  return {
+    type: "LOG_OUT"
+  };
+};
