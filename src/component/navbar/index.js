@@ -44,7 +44,12 @@ const AppNavbar = () => {
                   Something
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <button onClick={() => LogOut()}>Log Out</button>
+                <button
+                  className="btn btn-link dropdown-item"
+                  onClick={() => LogOut()}
+                >
+                  Log Out
+                </button>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
